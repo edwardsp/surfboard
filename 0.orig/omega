@@ -44,7 +44,7 @@ boundaryField
         value           $internalField;
     }
 
-    hull
+    board
     {
         type            omegaWallFunction;
         value           $internalField;

@@ -41,7 +41,7 @@ boundaryField
         p0              uniform 0;
     }
 
-    hull
+    board
     {
         type            fixedFluxPressure;
         value           $internalField;

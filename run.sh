@@ -1,6 +1,18 @@
 #!/bin/sh
 cd ${0%/*} || exit 1    # Run from this directory
 
+surfboardUrl="$1"
+depth=$2
+roll=$3
+numProcs=$4
+numberOfIterations=$5
+mpiArgs=$6
+
+wget "$surfboardUrl" -O - > constant/triSurface/board-original.stl
+pvpython ./orient_board.py constant/triSurface/board-original.stl constant/triSurface/board.stl $depth $roll
+sed -i "s/__NUMPROCS__/$numProcs/g" etc/decomposeParDict
+sed -i "s/__ENDTIME__/$numberOfIterations/g" etc/controlDict
+
 # Source tutorial run functions
 . $WM_PROJECT_DIR/bin/tools/RunFunctions
 
@@ -26,9 +38,9 @@ runApplication setFields
 
 runApplication decomposePar
 
-runParallel renumberMesh -overwrite
+mpirun -np $numProcs $mpiArgs renumberMesh -parallel -overwrite >log.renumberMesh 2>&1
 
-runParallel $(getApplication)
+mpirun -np $numProcs $mpiArgs $(getApplication) -parallel >log.$(getApplication) 2>&1
 
 runApplication reconstructPar
 

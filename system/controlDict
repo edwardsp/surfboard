@@ -23,13 +23,13 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         4000;
+endTime         __ENDTIME__;
 
 deltaT          1;
 
 writeControl    timeStep;
 
-writeInterval   500;
+writeInterval   __ENDTIME__;
 
 purgeWrite      0;
 
@@ -51,7 +51,7 @@ functions
     {
         type forces;
         libs ( "libforces.so" );
-        patches (hull);
+        patches (board);
         rhoInf  998.8;
         log     on;
         writeControl   timeStep;

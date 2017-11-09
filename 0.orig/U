@@ -47,7 +47,7 @@ boundaryField
         value           uniform (0 0 0);
     }
 
-    hull
+    board
     {
         type            movingWallVelocity;
         value           uniform (0 0 0);

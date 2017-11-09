@@ -45,7 +45,7 @@ boundaryField
         value           $internalField;
     }
 
-    hull
+    board
     {
         type            zeroGradient;
     }

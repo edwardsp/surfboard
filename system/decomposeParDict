@@ -22,7 +22,7 @@ FoamFile
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-numberOfSubdomains 16;
+numberOfSubdomains __NUMPROCS__;
 
 method          scotch;
 

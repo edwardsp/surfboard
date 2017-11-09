@@ -40,7 +40,7 @@ boundaryField
         type            zeroGradient;
     }
 
-    hull
+    board
     {
         type            nutkRoughWallFunction;
         Ks              uniform 100e-6;
