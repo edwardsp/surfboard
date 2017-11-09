@@ -10,8 +10,8 @@ mpiArgs=$6
 
 wget "$surfboardUrl" -O - > constant/triSurface/board-original.stl
 pvpython ./orient_board.py constant/triSurface/board-original.stl constant/triSurface/board.stl $depth $roll
-sed -i "s/__NUMPROCS__/$numProcs/g" etc/decomposeParDict
-sed -i "s/__ENDTIME__/$numberOfIterations/g" etc/controlDict
+sed -i "s/__NUMPROCS__/$numProcs/g" system/decomposeParDict
+sed -i "s/__ENDTIME__/$numberOfIterations/g" system/controlDict
 
 # Source tutorial run functions
 . $WM_PROJECT_DIR/bin/tools/RunFunctions
