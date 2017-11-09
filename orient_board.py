@@ -24,7 +24,7 @@ transform = Transform(Input=surfboard_1)
 transform.Transform = 'Transform'
 
 # Properties modified on transform2.Transform
-transform.Transform.Translate = [0.0, 0.0, -depth]
+transform.Transform.Translate = [0.0, 0.0, depth]
 transform.Transform.Rotate = [roll, 0.0, 0.0]
 transform.Transform.Scale = [0.0254, 0.0254, 0.0254]
 
