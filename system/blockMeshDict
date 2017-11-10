@@ -16,11 +16,11 @@ FoamFile
 
 convertToMeters 1;
 
-xMin -20;
-yMin -8;
+xMin -25;
+yMin -10;
 zMin -8;
-xMax 5;
-yMax 8;
+xMax 15;
+yMax 10;
 zMax 2;
 
 vertices
