@@ -16,28 +16,38 @@ FoamFile
 
 convertToMeters 1;
 
+xMin -20;
+yMin -8;
+zMin -8;
+xMax 5;
+yMax 8;
+zMax 2;
+
 vertices
 (
-    (-20 -8 -8)
-    (5 -8 -8)
-    (5 8 -8)
-    (-20 8 -8)
+    ($xMin $yMin $zMin)
+    ($xMax $yMin $zMin)
+    ($xMax $yMax $zMin)
+    ($xMin $yMax $zMin)
 
-    (-20 -8 0)
-    (5 -8 0)
-    (5 8 0)
-    (-20 8 0)
+    ($xMin $yMin 0)
+    ($xMax $yMin 0)
+    ($xMax $yMax 0)
+    ($xMin $yMax 0)
 
-    (-20 -8 2)
-    (5 -8 2)
-    (5 8 2)
-    (-20 8 2)
+    ($xMin $yMin $zMax)
+    ($xMax $yMin $zMax)
+    ($xMax $yMax $zMax)
+    ($xMin $yMax $zMax)
 );
+
+xStep #calc "4*($xMax-$xMin)+1";
+yStep #calc "4*($yMax-$yMin)+1";
 
 blocks
 (
-    hex (0 1 2 3 4 5 6 7) (101 65 100) simpleGrading (1 1 0.0625)
-    hex (4 5 6 7 8 9 10 11) (101 65 50) simpleGrading (1 1 4)
+    hex (0 1 2 3 4 5 6 7) ($xStep $yStep 100) simpleGrading (1 1 0.0625)
+    hex (4 5 6 7 8 9 10 11) ($xStep $yStep 50) simpleGrading (1 1 4)
 );
 
 edges
