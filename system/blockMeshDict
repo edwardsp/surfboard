@@ -23,6 +23,12 @@ xMax 15;
 yMax 10;
 zMax 2;
 
+// xStep #calc "4*($xMax-$xMin)+1";
+// yStep #calc "4*($yMax-$yMin)+1";
+xStep 161;
+yStep 41;
+
+
 vertices
 (
     ($xMin $yMin $zMin)
@@ -40,9 +46,6 @@ vertices
     ($xMax $yMax $zMax)
     ($xMin $yMax $zMax)
 );
-
-xStep #calc "4*($xMax-$xMin)+1";
-yStep #calc "4*($yMax-$yMin)+1";
 
 blocks
 (
